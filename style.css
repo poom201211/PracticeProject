@@ -17,4 +17,13 @@
 
 .font{
     font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.background{
+    background-color:#6c757d;
+}
+
+.height{
+    height: 800px;
 }
