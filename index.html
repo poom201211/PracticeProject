@@ -28,7 +28,13 @@
         <div class="h4 color textSize">
           This is a house stimulation we have put together. What this website does is that it connects with the hardware Adruino and
           NodeMCU. The interesting thing is that we can control the functionality through just a press of a button. The hardware
-          we used in this project includes, LED(Blue for air), LED(Green for light), ultrasonic and buzzer.
+          we used in this project includes, LED(Blue for air), LED(Green for light), ultrasonic and buzzer. Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Quisquam consequuntur nisi doloremque modi dolorem impedit eos sed voluptatibus
+          amet minus? Ab ducimus obcaecati quam ipsam voluptate voluptas repellat. Totam, saepe. Lorem ipsum dolor, sit amet
+          consectetur adipisicing elit. Quasi ea, aliquid esse provident cupiditate odio aspernatur sequi autem dolorum quisquam
+          dicta et praesentium dignissimos corrupti consectetur inventore, totam cum ex. Lorem ipsum dolor sit amet consectetur,
+          adipisicing elit. Laborum nisi quos quasi consequatur odio omnis asperiores, libero ipsa voluptatum minima facere
+          aut consequuntur.
         </div>
       </div>
     </div>
@@ -61,7 +67,7 @@
             The air button below activates the LED(Will be in blue since we do not have a fan) which is located in the house aswell.
           </div>
           <center>
-            <button id="air" type="button" class="btn btn-outline-secondary buttonWidth">Air</button>
+            <button id="openair" type="button" class="btn btn-outline-secondary buttonWidth">Air</button>
           </center>
         </div>
       </div>
@@ -101,20 +107,55 @@
     <div class="col-1"></div>
 
     <div class="center col-10">
-      <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Satistics
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <button class="dropdown-item" type="button">Light density: </button>
-          <button class="dropdown-item" type="button">Humidity: </button>
-          <button class="dropdown-item" type="button">Temperature: </button>
-          <button class="dropdown-item" type="button"></button>
-        </div>
-      </div>
+      <button type="button" class="btn btn-secondary btn-lg btn-block">Statistics</button>
     </div>
 
     <div class="col-1"></div>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3">
+        <center>
+          <img class="imageSize border" src="https://cdn3.iconfinder.com/data/icons/hotel-4-1/48/190-512.png" alt="">
+          <div id="buzzerstate" class="alert alert-secondary background color" role="alert">
+            Buzzer state:
+          </div>
+        </center>
+      </div>
+
+      <div class="col-md-3">
+        <center>
+          <img class="imageSize border" src="http://haircompanion.co.uk/wp-content/uploads/2016/02/temperature-controlled.jpg" alt="">
+          <div id="temperaturestate" class="alert alert-secondary background color" role="alert">
+            Temperature state:
+          </div>
+        </center>
+      </div>
+
+      <div class="col-md-3">
+        <center>
+          <img class="imageSize border" src="https://image.flaticon.com/icons/svg/28/28691.svg" alt="">
+          <div id="peoplestate" class="alert alert-secondary background color" role="alert">
+            People state:
+          </div>
+        </center>
+      </div>
+
+      <div class="col-md-3">
+        <center>
+          <img class="imageSize border" src="https://png.pngtree.com/element_origin_min_pic/16/12/06/125cc420976aaed540beaae34e60b046.jpg"
+            alt="">
+          <div id="lightstate" class="alert alert-secondary background color" role="alert">
+            Light state:
+          </div>
+        </center>
+      </div>
+
+    </div>
   </div>
 
   <br>

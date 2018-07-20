@@ -1,14 +1,68 @@
-
-let myFunction = function(){
+let storeLight = 0
+let storeAir = 0
+let storeDoor = 0
+let storeBell = 0
+let myFunction = function () {
     setInterval(function () {
         $.ajax({
             type: "GET",
             url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-light_lux/view/",
             data: "text",
             success: function (response) {
-                value = response.val()
+                storeLight = response
+                $('#lightstate').html(`<h5>Light state: ${response} lux</h5>`)
             },
-            fail: function(response){
+            fail: function (response) {
+                console.log(response)
+
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-sound/view/",
+            data: "text",
+            success: function (response) {
+                storeBell = response
+                let word = ""
+                if (storeBell === 1) {
+                    word = "off"
+                } else if (storeBell === 0) {
+                    word = "on"
+                }
+                $('#buzzerstate').html(`<h5>Buzzer state: ${word}</h5>`)
+            },
+            fail: function (response) {
+                console.log(response)
+
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-door/view/",
+            data: "text",
+            success: function (response) {
+                storeDoor = response
+                $('#peoplestate').html(`<h5>People state: ${response}</h5>`)
+
+            },
+            fail: function (response) {
+                console.log(response)
+
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-openair/view/",
+            data: "text",
+            success: function (response) {
+                storeAir = response
+                $('#temperaturestate').html(`<h5>Temperature state: ${response}</h5>`)
+
+            },
+            fail: function (response) {
                 console.log(response)
 
             }
@@ -16,77 +70,66 @@ let myFunction = function(){
     }, 5000)
 
     $("#light").on("click", function () {
+        let state = 0
+        if (storeLight === 0) {
+            state = 1;
+        } else {
+            state = 0;
+        }
         $.ajax({
             type: "POST",
             url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-light_lux/set/",
             data: {
-                value: response.val()
+                value: state
             },
-            dataType: "json",
-            success: function (value) {
-                if(value >= 1){
-                    value = 0;
-                }else{
-                    value = 1;
-                }
-            }
         });
     });
 
     $("#bell").on("click", function () {
+        let state = 0
+        if (storeBell === 0) {
+            state = 1;
+        } else {
+            state = 0;
+        }
         $.ajax({
             type: "POST",
-            url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-light_lux/set/",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-sound/set/",
             data: {
-                value: 0
+                value: state
             },
-            dataType: "json",
-            success: function (response) {
-                console.log(response)
-                if(response === 0){
-                    response = 1;
-                }else{
-                    response = 0;
-                }
-            }
         });
     });
 
     $("#door").on("click", function () {
+        let state = 0
+        if (storeDoor === 0) {
+            state = 1;
+        } else {
+            state = 0;
+        }
         $.ajax({
             type: "POST",
-            url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-light_lux/set/",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-door/set/",
             data: {
-                value: 0
+                value: state
             },
-            dataType: "json",
-            success: function (response) {
-                console.log(response)
-                if(response === 0){
-                    response = 1;
-                }else{
-                    response = 0;
-                }
-            }
         });
     });
 
-    $("#air").on("click", function () {
+    $("#openair").on("click", function () {
+        let state = 0
+        if (storeAir === 0) {
+            state = 1;
+        } else {
+            state = 0;
+        }
         $.ajax({
             type: "POST",
-            url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-light_lux/set/",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-openair/set/",
             data: {
-                value: 0
+                value: state
             },
-            dataType: "json",
-            success: function (response) {
-                console.log(response)
-                if(response === 0){
-                    response = 1;
-                }else{
-                    response = 0;
-                }
-            }
         });
     });
 
