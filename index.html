@@ -15,7 +15,26 @@
 </head>
 
 <body>
-  <h1 class="center font border background">House Simulation</h1>
+  <h1 class="center display-3 color border background">House Simulation</h1>
+
+  <br>
+
+  <div class="row">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-10 background titleHeight">
+      <div class="display-4 color">
+        Welcome Home
+        <div class="h4 color textSize">
+          This is a house stimulation we have put together. What this website does is that it connects with the hardware Adruino and
+          NodeMCU. The interesting thing is that we can control the functionality through just a press of a button. The hardware
+          we used in this project includes, LED(Blue for air), LED(Green for light), ultrasonic and buzzer.
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-1"></div>
+  </div>
 
   <br>
 
@@ -26,6 +45,9 @@
       <div class="col-md-3 border">
         <img class="imageSize" src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/43.Bell-512.png" alt="">
         <div>
+          <div class="alert alert-secondary background color" role="alert">
+            The bell button located below allows the user to trun on/off the buzzer which is located in the prototype house.
+          </div>
           <center>
             <button id="bell" type="button" class="btn btn-outline-secondary buttonWidth">Bell</button>
           </center>
@@ -35,6 +57,9 @@
       <div class="col-md-3 border">
         <img class="imageSize" src="https://agriturismoiacovino.com/wp-content/uploads/2016/06/air-conditioner.png" alt="">
         <div>
+          <div class="alert alert-secondary background color" role="alert">
+            The air button below activates the LED(Will be in blue since we do not have a fan) which is located in the house aswell.
+          </div>
           <center>
             <button id="air" type="button" class="btn btn-outline-secondary buttonWidth">Air</button>
           </center>
@@ -44,6 +69,9 @@
       <div class="col-md-3 border">
         <img class="imageSize" src="https://png.icons8.com/ios/1600/door-opened.png" alt="">
         <div>
+          <div class="alert alert-secondary background color" role="alert">
+            The door activates the ultrsonic sensor which stimulates the movement of someone entering the door or if there isnt anyone.
+          </div>
           <center>
             <button id="door" type="button" class="btn btn-outline-secondary buttonWidth">Door</button>
           </center>
@@ -53,6 +81,10 @@
       <div class="col-md-3 border">
         <img class="imageSize" src="https://image.flaticon.com/icons/png/512/33/33657.png" alt="">
         <div>
+          <div class="alert alert-secondary background color" role="alert">
+            The light button activates LED which is again, located in the house. Meant to stimulate light source in the house with an
+            LDR.
+          </div>
           <center>
             <button id="light" type="button" class="btn btn-outline-secondary buttonWidth">Light</button>
           </center>
@@ -69,7 +101,17 @@
     <div class="col-1"></div>
 
     <div class="center col-10">
-      <button type="button" class="btn btn-secondary btn-lg btn-block">Satistics</button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Satistics
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <button class="dropdown-item" type="button">Light density: </button>
+          <button class="dropdown-item" type="button">Humidity: </button>
+          <button class="dropdown-item" type="button">Temperature: </button>
+          <button class="dropdown-item" type="button"></button>
+        </div>
+      </div>
     </div>
 
     <div class="col-1"></div>
@@ -94,7 +136,8 @@
             <img class="d-block w-100 pictureSize" src="https://www.artsfon.com/pic/201412/2560x1600/artsfon.com-42786.jpg" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 pictureSize" src="http://xinature.com/wp-content/uploads/2016/10/misc-house-night-area-landscape-black-white-hd-wallpapers-1920x1080.jpg" alt="Third slide">
+            <img class="d-block w-100 pictureSize" src="http://xinature.com/wp-content/uploads/2016/10/misc-house-night-area-landscape-black-white-hd-wallpapers-1920x1080.jpg"
+              alt="Third slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

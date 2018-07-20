@@ -15,8 +15,7 @@
     border: 250px solid black;
 }
 
-.font{
-    font-family: 'Courier New', Courier, monospace;
+.color{
     color: white;
 }
 
@@ -31,4 +30,12 @@
 .pictureSize{
     height: auto;
     width: auto;
+}
+
+.titleHeight{
+    height: 200px;
+}
+
+.textSize{
+    font-size: 20px;
 }
