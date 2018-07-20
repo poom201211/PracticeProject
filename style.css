@@ -27,3 +27,8 @@
 .height{
     height: 800px;
 }
+
+.pictureSize{
+    height: auto;
+    width: auto;
+}
