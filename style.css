@@ -1,0 +1,20 @@
+.center{
+    text-align: center;
+}
+
+.imageSize{
+    height: 250px;
+    width: 250px;
+}
+
+.buttonWidth{
+    width: 250px;
+}
+
+.border{
+    border: 250px solid black;
+}
+
+.font{
+    font-family: 'Courier New', Courier, monospace;
+}
