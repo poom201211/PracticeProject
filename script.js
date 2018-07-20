@@ -2,7 +2,7 @@ let myFunction = function(){
     setInterval(function () {
         $.ajax({
             type: "GET",
-            url: "http://ecourse.cpe.ku.th:1515/api/buapalm-light_lux/view/",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-light_lux/view/",
             data: "text",
             success: function (response) {
                 
@@ -16,9 +16,11 @@ let myFunction = function(){
     $("#light").on("click", function () {
         $.ajax({
             type: "POST",
-            url: "http://ecourse.cpe.ku.th:1515/buapalm-light_lux/api/set/",
+            url: "http://ecourse.cpe.ku.ac.th:1515/api/buapalm-light_lux/set/",
             data: {
-                value: $(response).val()
+                // value: $(response).val()
+                value: 0
+                
             },
             dataType: "json",
             success: function (response) {
